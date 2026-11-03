@@ -1,0 +1,22 @@
+AI USAGE LOG — Baqsha Qorgaushy
+=================================
+Tool: Claude (Anthropic), chat for learning/planning only.
+
+1) Brainstormed game genre options (platformer, top-down shooter, tower defense,
+   puzzle), then narrowed to a casual puzzle genre, then to a puzzle+tower-defense
+   hybrid that supports future "enemy AI" assignments.
+
+2) Developed the "Baqsha Qorgaushy" concept: match-3 flower grid that charges
+   weapons to defend a garden path from pests (beetle, snail, caterpillar).
+
+3) Used AI to generate the first draft of the Game Design Document (GDD) text
+   and to lay it out as a PDF. Content was reviewed and will be adjusted by me
+   as the project develops.
+
+4) Used AI to draft the starter README.md, .gitignore and the SafeArea /
+   UI button-wiring C# scripts (UIButtonActions.cs, SafeArea.cs) described
+   below, as a learning reference for implementing Canvas Scaler / anchors /
+   safe-area UI in Unity.
+
+No AI coding agent (Claude Code, Codex, Cursor Agent, Copilot agent, etc.) was
+used to write code directly inside the Unity project, per assignment rules.
