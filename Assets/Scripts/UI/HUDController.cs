@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class HUDController : MonoBehaviour
 {
-    [SerializeField] private Text heartsLabel;   // top-left, anchored (0,1)
-    [SerializeField] private Text scoreLabel;    // top-center, anchored (0.5,1)
-    [SerializeField] private Button pauseButton; // top-right, anchored (1,1)
+    [SerializeField] private TMP_Text heartsLabel; 
+    [SerializeField] private TMP_Text scoreLabel;  
+    [SerializeField] private Button pauseButton;  
     [SerializeField] private PausePanel pausePanel;
 
     private int _lives = 3;
@@ -31,14 +31,14 @@ public class HUDController : MonoBehaviour
         RefreshHearts();
         if (_lives == 0)
         {
-            // next assignments
+            // in the future InshaAllah
         }
     }
 
     private void RefreshHearts()
     {
         if (heartsLabel != null)
-            heartsLabel.text = new string('♥', _lives); 
+            heartsLabel.text = new string('♥', _lives);
     }
 
     private void RefreshScore()

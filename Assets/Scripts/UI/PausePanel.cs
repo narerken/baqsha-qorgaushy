@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class PausePanel : MonoBehaviour
 {
     public void Show()
@@ -12,5 +11,15 @@ public class PausePanel : MonoBehaviour
     {
         gameObject.SetActive(false);
         GameManager.Instance.ResumeGame();
+    }
+
+    public void RestartLevel()
+    {
+        GameManager.Instance.RestartLevel();
+    }
+
+    public void GoToMainMenu()
+    {
+        GameManager.Instance.GoToMainMenu();
     }
 }
