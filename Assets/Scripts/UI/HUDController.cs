@@ -4,9 +4,13 @@ using TMPro;
 
 public class HUDController : MonoBehaviour
 {
-    [SerializeField] private TMP_Text heartsLabel; 
-    [SerializeField] private TMP_Text scoreLabel;  
-    [SerializeField] private Button pauseButton;  
+    [Header("Hearts (assign 3 heart Image objects, left to right)")]
+    [SerializeField] private Image[] heartIcons;
+    [SerializeField] private Sprite heartFullSprite;
+    [SerializeField] private Sprite heartEmptySprite;
+
+    [SerializeField] private TMP_Text scoreLabel;
+    [SerializeField] private Button pauseButton;
     [SerializeField] private PausePanel pausePanel;
 
     private int _lives = 3;
@@ -14,6 +18,7 @@ public class HUDController : MonoBehaviour
 
     private void Start()
     {
+        _lives = heartIcons != null ? heartIcons.Length : 3;
         pauseButton.onClick.AddListener(() => pausePanel.Show());
         RefreshHearts();
         RefreshScore();
@@ -37,8 +42,12 @@ public class HUDController : MonoBehaviour
 
     private void RefreshHearts()
     {
-        if (heartsLabel != null)
-            heartsLabel.text = new string('♥', _lives);
+        if (heartIcons == null) return;
+        for (int i = 0; i < heartIcons.Length; i++)
+        {
+            if (heartIcons[i] == null) continue;
+            heartIcons[i].sprite = i < _lives ? heartFullSprite : heartEmptySprite;
+        }
     }
 
     private void RefreshScore()
